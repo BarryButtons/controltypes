@@ -124,5 +124,11 @@ fun workingWithTemplates(){
     //using arbitrary expressions in {}
     println("Expressions (cases): ${firstString.uppercase()} ${secondString.lowercase()}")
     println("Expressions (string size): first string is ${firstString.length}")
-    println("Expressions (substring): ${firstString.substring(0,2)}")
+    println("Expressions (substring): ${firstString.substring(0,7)}")
+}
+
+fun nullSafety() {
+    var aString :String? = "abc"
+    val size = aString?.length ?: -1
+    aString = null
 }
