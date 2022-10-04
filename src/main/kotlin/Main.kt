@@ -16,6 +16,9 @@ fun main(args: Array<String>) {
     forEachStandard()
     forEachIndices()
     forEachWithIndex()
+    whileWithList()
+    doWhileExample()
+    workingWithStrings()
 }
 
 fun printValue(value : Int) = when(value){
@@ -88,4 +91,26 @@ fun forEachWithIndex(){
     for ((index, value) in items.withIndex()){
         println("The item at " + index + " is: " + value)
     }
+}
+
+fun whileWithList(){
+    val items = listOf("apple", "banana", "kiwi")
+    var index = 0
+    while (index < items.size){
+        println ("Item at index: " + index + " is: " +  items[index])
+        index++
+    }
+}
+
+fun doWhileExample(){
+    var index = 0
+    do {
+        println("Do While Index is: " + index)
+        index++
+    } while (index < 5)
+}
+
+fun workingWithStrings(){
+    val aString = "An escaped string!\n"
+    print(aString)
 }
