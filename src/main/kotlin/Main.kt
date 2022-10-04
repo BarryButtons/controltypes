@@ -4,7 +4,7 @@ import java.lang.Integer.parseInt
 
 fun main(args: Array<String>) {
     println("The max number is:" + maxOf(4,6));
-    println(printValue(7))
+    println(printValue(2))
     printRange(30)
     println(printExpressionResult(12, "12"))
     println(describe(1))
@@ -19,16 +19,15 @@ fun main(args: Array<String>) {
     whileWithList()
     doWhileExample()
     workingWithStrings()
+    workingWithTemplates()
 }
 
-fun printValue(value : Int) = when(value){
-    1 -> println ("The value is One")
-    2 -> println ("The value is Two")
-    in 3..5 -> println ("The value is between Three and Five")
-    6,7,8 -> println("THe value is six, seven and eight")
-    else -> {
-        println ("The value is: " + value)
-    }
+fun printValue(value : Int) = when(value) {
+    1 -> "The value is One"
+    2 -> "The value is Two"
+    in 3..5 -> "The value is between Three and Five"
+    6, 7, 8 -> "The value is either Six, Seven or Eight"
+    else -> "The value is: $value"
 }
 
 fun printRange(value: Int){
@@ -75,7 +74,7 @@ fun describe(obj: Any): String = when (obj){
 fun forEachStandard(){
     val items = listOf("apple", "banana", "kiwi")
     for (item in items){
-        println("Item is: " + item)
+        println("Item is: $item")
     }
 }
 
@@ -113,4 +112,17 @@ fun doWhileExample(){
 fun workingWithStrings(){
     val aString = "An escaped string!\n"
     print(aString)
+}
+
+fun workingWithTemplates(){
+    var firstString = "This is a String"
+    var secondString = "and this is another String"
+
+    //using simple names
+    println ("Simple names: $firstString $secondString")
+
+    //using arbitrary expressions in {}
+    println("Expressions (cases): ${firstString.uppercase()} ${secondString.lowercase()}")
+    println("Expressions (string size): first string is ${firstString.length}")
+    println("Expressions (substring): ${firstString.substring(0,2)}")
 }
