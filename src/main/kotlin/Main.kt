@@ -13,6 +13,9 @@ fun main(args: Array<String>) {
     println(describe(2))
     println(describe("other"))
     println(printAnimal("elephant"))
+    forEachStandard()
+    forEachIndices()
+    forEachWithIndex()
 }
 
 fun printValue(value : Int) = when(value){
@@ -64,4 +67,25 @@ fun describe(obj: Any): String = when (obj){
     is Long -> "Long Var"
     !is String -> "Not a String"
     else -> "Unknown"
+}
+
+fun forEachStandard(){
+    val items = listOf("apple", "banana", "kiwi")
+    for (item in items){
+        println("Item is: " + item)
+    }
+}
+
+fun forEachIndices(){
+    val items = listOf("apple", "banana", "kiwi")
+    for (index in items.indices){
+        println("Item at " + index + " is: " + items[index])
+    }
+}
+
+fun forEachWithIndex(){
+    val items = listOf("apple", "banana", "kiwi")
+    for ((index, value) in items.withIndex()){
+        println("The item at " + index + " is: " + value)
+    }
 }
